@@ -25,7 +25,7 @@ function onGalleryLinkClick(evt) {
     return;
   }
 }
-var lightbox = new SimpleLightbox(".gallery a", {
+const lightbox = new SimpleLightbox(".gallery a", {
   captionsData: "alt",
   captionPosition: "bottom",
   captionDelay: 250,

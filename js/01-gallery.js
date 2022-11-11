@@ -28,12 +28,19 @@ function onGalleryLinkClick(evt) {
     return;
   }
 
-  const instance = basicLightbox.create(`
+  const instance = basicLightbox.create(
+    `
 	<img 
     src=${evt.target.dataset.source}            
     width = "800"
     height = "600"
-  >`);
+  >`,
+    {
+      onClose: () => {
+        document.removeEventListener("keydown", closeModal);
+      },
+    }
+  );
   instance.show();
 
   document.addEventListener("keydown", closeModal);
